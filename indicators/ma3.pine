@@ -1,0 +1,31 @@
+//@version=6
+indicator(title="$TTO_Sample_MA3", shorttitle="★MA3", overlay=true)
+
+
+//======================
+// パラメータの定義
+//======================
+
+in_src = input.source(close, title="計算対象の価格", group="設定")
+in_ma_short_length = input.int(5, title="短期MA 日数", minval=1, group="設定")
+in_ma_middle_length = input.int(25, title="中期MA 日数", minval=1, group="設定")
+in_ma_long_length = input.int(75, title="長期MA 日数", minval=1, group="設定")
+in_calc_ema = input.bool(false, title="EMAとして計算する", group="設定")
+
+
+//======================
+// テクニカル指標の計算
+//======================
+
+ma_short = in_calc_ema ? ta.ema(in_src, in_ma_short_length) : ta.sma(in_src, in_ma_short_length)
+ma_middle = in_calc_ema ? ta.ema(in_src, in_ma_middle_length) : ta.sma(in_src, in_ma_middle_length)
+ma_long = in_calc_ema ? ta.ema(in_src, in_ma_long_length) : ta.sma(in_src, in_ma_long_length)
+
+
+//======================
+// 表示とプロット
+//======================
+
+plot(ma_short, color=color.orange, title="短期MA")
+plot(ma_middle, color=color.blue, title="中期MA")
+plot(ma_long, color=color.green, title="長期MA")
