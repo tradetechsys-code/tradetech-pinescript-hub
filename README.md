@@ -10,7 +10,7 @@ TradingView用PineScriptインジケーター・ストラテジー集。
 
 | ファイル | 内容 | note記事 | TradingView |
 |---------|------|---------|-------------|
-| （準備中） | | | |
+| [ma3.pine](indicators/ma3.pine) | 移動平均線3本（SMA/EMA切替） | [note](https://note.com/tradetech/n/n6e693b08e708) | [TradingView](https://jp.tradingview.com/script/ZqYYbGtj/) |
 
 ### ストラテジー
 
